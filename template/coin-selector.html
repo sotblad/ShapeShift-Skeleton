@@ -2,12 +2,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="btn-group" dropdown>
-                <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
-                    {{ selectedCoin }} <span class="caret"></span>
+                <button type="button" class="select_coin_button" dropdown-toggle>
+                    <img class="coin_icon" src="{{coins[selectedCoin].image}}">{{ selectedCoin }}
+			<span class="select_coin_button_arrow">▾</span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
                     <li ng-repeat="(k, coin) in coins">
-                        <a ng-click="getMarketData(coin.symbol)">{{coin.symbol}}</a>
+                        <a ng-click="getMarketData(coin.symbol) && getMarketData(coin.image)">
+			<img class="coin_icon" src="{{coin.image}}">{{coin.symbol}}</a>
                     </li>
                 </ul>
             </div>
@@ -32,4 +34,3 @@
         </div>
     </div>
 </div>
-
