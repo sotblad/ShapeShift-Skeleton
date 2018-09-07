@@ -7,7 +7,7 @@
 			<span class="select_coin_button_arrow">▾</span>
                 </button>
                 <ul class="dropdown-menu" role="menu">
-                    <li ng-repeat="(k, coin) in coins">
+                    <li ng-repeat="(k, coin) in coins" style="width:265px;">
                         <a ng-click="getMarketData(coin.symbol) && getMarketData(coin.image)">
 			<img class="coin_icon" src="{{coin.image}}">{{coin.symbol}}</a>
                     </li>
