@@ -5,7 +5,7 @@
     <div class="col-md-3">
         <qrcode version="20" error-correction-level="H" size=200 data="{{depositInfo.depositQR}}"></qrcode>
     </div>
-    <div class="col-md-5">
+    <div class="col-md-5 typo--colored typo--lg">
         <div>Deposit Type: {{depositInfo.depositType}}</div>
         <div ng-if="depositInfo.depositAmount">Deposit Amount: {{depositInfo.depositAmount}}</div>
         <div>Deposit Address: {{depositInfo.deposit}}</div>
