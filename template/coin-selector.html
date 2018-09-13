@@ -1,6 +1,12 @@
 <div ng-class="{{class}}">
     <div class="row">
         <div class="col-md-12">
+		<div ng-show="direction=='in'" class="">
+			<label>Have</label>
+		</div>
+		<div ng-show="direction=='out'" class="">
+			<label>Want</label>
+		</div>
             <div class="btn-group" dropdown>
                 <button type="button" class="select_coin_button" dropdown-toggle>
                     <img class="coin_icon" src="{{coins[selectedCoin].image}}">{{ selectedCoin }}
@@ -21,16 +27,16 @@
                     <input type="text" ng-model="coinAddress" class="form-control">
                 </div>
                 <div ng-show="direction=='out'" class="">
-                    <label>Amount:</label>
+                    <label>{{selectedCoin}} Amount:</label>
                     <input type="text" ng-model="amount" class="form-control">
                 </div>
             </div>
             <div ng-if="direction=='in'" class="">
-		<div class="trade_modal_conversion_rate" style="display: block;">Deposit Min: {{marketData.minimum}}</div>
-                <div class="trade_modal_conversion_rate" style="display: block;">Deposit Max: {{marketData.limit}}</div>
-                <div class="trade_modal_conversion_rate" style="display: block;">Miner Fee: {{marketData.minerFee}}</div>
-                <div class="trade_modal_conversion_rate" style="display: block;">1 {{selectedCoin}} = {{marketData.rate}} {{coinOut}}</div>
-		<!--<div class="trade_modal_deposit_limits" style="display: block;"><div class="trade_modal_deposit_data" style="border-right: 1px solid rgb(146, 189, 98);"><div class="trade_modal_deposit_data_name">Deposit Min</div><div class="trade_modal_deposit_data_value">{{marketData.minimum}} {{selectedCoin}}</div></div><div class="trade_modal_deposit_data" style="border-right: 1px solid rgb(146, 189, 98);"><div class="trade_modal_deposit_data_name">Deposit Max</div><div class="trade_modal_deposit_data_value">{{marketData.limit}} {{selectedCoin}}</div></div><div class="trade_modal_deposit_data"><div class="trade_modal_deposit_data_name">Miner Fee</div><div class="trade_modal_deposit_data_value">{{marketData.minerFee}} {{selectedCoin}}</div></div><div></div></div>-->
+		<div class="" style="display: block;">Deposit Min: {{marketData.minimum}} {{selectedCoin}}</div>
+                <div class="" style="display: block;">Deposit Max: {{marketData.limit}} {{selectedCoin}}</div>
+                <div class="" style="display: block;">Miner Fee: {{marketData.minerFee}}</div>
+                <div class="" style="display: block;">1 {{selectedCoin}} --> {{marketData.rate}}</div>
+		<!-- 				<div class="trade_modal_deposit_limits" style="display: block;"><div class="trade_modal_deposit_data" style="border-right: 1px solid rgb(146, 189, 98);"><div class="trade_modal_deposit_data_name">Deposit Min</div><div class="trade_modal_deposit_data_value">{{marketData.minimum}} {{selectedCoin}}</div></div><div class="trade_modal_deposit_data" style="border-right: 1px solid rgb(146, 189, 98);"><div class="trade_modal_deposit_data_name">Deposit Max</div><div class="trade_modal_deposit_data_value">{{marketData.limit}} {{selectedCoin}}</div></div><div class="trade_modal_deposit_data"><div class="trade_modal_deposit_data_name">Miner Fee</div><div class="trade_modal_deposit_data_value">{{marketData.minerFee}} {{selectedCoin}}</div></div><div></div></div> -->
             </div>
         </div>
     </div>
